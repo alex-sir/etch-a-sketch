@@ -40,9 +40,11 @@ h1 {
     cursor: pointer;
 }
 
-.fa-eye {
+.fas {
+    display: inline-block;
+    height: 29px;
     margin-left: 20px;
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 30px;
     cursor: pointer;
 }
@@ -101,6 +103,11 @@ input[type="number"]::-webkit-outer-spin-button {
     border: thin solid rgb(232, 232, 232);
 }
 
+.dm-selected-border {
+    border-bottom: 2px solid rgb(232, 232, 232);
+    padding-bottom: 32.5px;
+}
+
 /* Light mode */
 .lm-body {
     background-color: rgb(232, 232, 232);
@@ -118,4 +125,66 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .lm-grid {
     border: thin solid rgb(32, 32, 32);
+}
+
+.lm-selected-border {
+    border-bottom: 2px solid rgb(32, 32, 32);
+    padding-bottom: 32.5px;
+}
+
+/* Landscape phone, small tablet */
+@media only screen and (min-width: 415px) and (max-width: 600px) {
+    h1 {
+        white-space: nowrap;
+        font-size: 30px;
+        margin-top: 25px;
+    }
+
+    .fas {
+        margin-left: 1vw;
+    }
+
+    .clear {
+        margin-right: 2vw;
+        margin-left: 2vw;
+    }
+
+    input[name="squares"] {
+        margin-left: 3vw;
+    }
+}
+
+/* Phone */
+@media only screen and (max-width: 415px) {
+    h1 {
+        white-space: nowrap;
+        font-size: 30px;
+        margin-top: 25px;
+    }
+
+    .fas {
+        margin-left: 1vw;
+        margin-top: 30px;
+        font-size: 5vw;
+        height: 6vw;
+    }
+
+    .clear {
+        margin-right: 2vw;
+        margin-left: 2vw;
+        font-size: 2vw;
+    }
+
+    input[name="squares"] {
+        margin-left: 3vw;
+        font-size: 2vw;
+    }
+
+    .lm-selected-border {
+        padding-bottom: 0px;
+    }
+
+    .dm-selected-border {
+        padding-bottom: 0px;
+    }
 }

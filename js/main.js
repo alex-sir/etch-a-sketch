@@ -2,6 +2,8 @@ const container = document.querySelector(".container");
 const clearButton = document.querySelector(".clear");
 const numOfSquares = document.querySelector('input[name="squares"]');
 const darkModeEye = document.querySelector(".fa-eye");
+const pencil = document.querySelector(".fa-pencil-alt");
+const eraser = document.querySelector(".fa-eraser");
 const h1 = document.querySelector("h1");
 
 function updateGrid() {
@@ -9,7 +11,12 @@ function updateGrid() {
         if (event.key === "Enter") {
             resetGrid();
             makeGrid();
-            fillSquares(1);
+            if (pencil.classList.contains("lm-selected-border") ||
+                pencil.classList.contains("dm-selected-border")) {
+                drawSquares(1);
+            } else {
+                eraseSquares();
+            }
         }
     });
 }
@@ -20,9 +27,9 @@ function resetGrid() {
 
 function makeGrid() {
     if (numOfSquares.value > +numOfSquares.getAttribute("max")) {
-        numOfSquares.value = 50;
+        numOfSquares.value = +numOfSquares.getAttribute("max");
     } else if (numOfSquares.value < +numOfSquares.getAttribute("min")) {
-        numOfSquares.value = 1;
+        numOfSquares.value = +numOfSquares.getAttribute("min");
     }
     container.setAttribute("style",
         `grid-template: repeat(${numOfSquares.value}, 1fr) / repeat(${numOfSquares.value}, 1fr)`);
@@ -49,7 +56,7 @@ function clear(divs) {
 }
 
 // autoClear: 1 = active
-function fillSquares(autoClear) {
+function drawSquares(autoClear = 0) {
     const divs = document.querySelectorAll(".container div");
 
     divs.forEach((div) => {
@@ -68,10 +75,27 @@ function fillSquares(autoClear) {
     clear(divs);
 }
 
+function eraseSquares() {
+    const divs = document.querySelectorAll(".container div");
+
+    divs.forEach((div) => {
+        div.addEventListener("mouseover", function () {
+            this.style.removeProperty("background");
+        });
+    });
+}
+
 function darkMode() {
-    darkModeEye.addEventListener("click", function () {
-        this.classList.toggle("lm-icon");
-        this.classList.toggle("dm-icon");
+    darkModeEye.addEventListener("click", () => {
+        document.querySelectorAll(".fas").forEach(fas => {
+            fas.classList.toggle("lm-icon");
+            fas.classList.toggle("dm-icon");
+            if (fas.classList.contains("lm-selected-border") ||
+                fas.classList.contains("dm-selected-border")) {
+                fas.classList.toggle("lm-selected-border");
+                fas.classList.toggle("dm-selected-border");
+            }
+        });
         h1.classList.toggle("lm-icon");
         h1.classList.toggle("dm-icon");
         document.body.classList.toggle("lm-body");
@@ -87,11 +111,39 @@ function darkMode() {
     });
 }
 
+function draw() {
+    window.onload = drawSquares(0);
+    pencil.addEventListener("click", function () {
+        if (eraser.classList.contains("lm-selected-border")) {
+            eraser.classList.toggle("lm-selected-border");
+            this.classList.toggle("lm-selected-border");
+        } else if (eraser.classList.contains("dm-selected-border")) {
+            eraser.classList.toggle("dm-selected-border");
+            this.classList.toggle("dm-selected-border");
+        }
+        drawSquares(0);
+    });
+}
+
+function erase() {
+    eraser.addEventListener("click", function () {
+        if (pencil.classList.contains("lm-selected-border")) {
+            pencil.classList.toggle("lm-selected-border");
+            this.classList.toggle("lm-selected-border");
+        } else if (pencil.classList.contains("dm-selected-border")) {
+            pencil.classList.toggle("dm-selected-border");
+            this.classList.toggle("dm-selected-border");
+        }
+        eraseSquares();
+    });
+}
+
 function main() {
     makeGrid();
-    fillSquares(0);
     updateGrid();
     darkMode();
+    draw();
+    erase();
 }
 
 window.onload = main();
