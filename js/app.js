@@ -6,6 +6,16 @@ const pencil = document.querySelector(".fa-pencil-alt");
 const eraser = document.querySelector(".fa-eraser");
 const h1 = document.querySelector("h1");
 
+// Jquery for spectrum
+$("#custom").spectrum({
+    color: "#b42020",
+    showInput: true,
+    showInitial: true,
+    showAlpha: true,
+    preferredFormat: "hex"
+});
+let customValue = $("#custom").spectrum("get");
+
 function updateGrid() {
     numOfSquares.addEventListener("keydown", event => {
         if (event.key === "Enter") {
@@ -13,7 +23,7 @@ function updateGrid() {
             makeGrid();
             if (pencil.classList.contains("lm-selected-border") ||
                 pencil.classList.contains("dm-selected-border")) {
-                drawSquares(1);
+                drawSquares(1, customValue);
             } else {
                 eraseSquares();
             }
@@ -56,15 +66,13 @@ function clear(divs) {
 }
 
 // autoClear: 1 = active
-function drawSquares(autoClear = 0) {
+function drawSquares(autoClear = 0, color) {
     const divs = document.querySelectorAll(".container div");
 
     divs.forEach((div) => {
         div.addEventListener("mouseover", function () {
             this.setAttribute("style",
-                `background-color: rgb(${Math.floor(Math.random() * 256)}, 
-                ${Math.floor(Math.random() * 256)}, 
-                ${Math.floor(Math.random() * 256)})`);
+                `background-color: ${color}`);
         });
     });
     if (autoClear === 1) {
@@ -73,6 +81,17 @@ function drawSquares(autoClear = 0) {
         });
     }
     clear(divs);
+}
+
+function drawSquaresNewColor() {
+    $("#custom").on("change.spectrum", function () {
+        customValue = $("#custom").spectrum("get");
+        if (eraser.classList.contains("lm-selected-border") ||
+            eraser.classList.contains("dm-selected-border")) {
+            return;
+        }
+        drawSquares(0, customValue);
+    });
 }
 
 function eraseSquares() {
@@ -112,7 +131,7 @@ function darkMode() {
 }
 
 function draw() {
-    window.onload = drawSquares(0);
+    window.onload = drawSquares(0, customValue);
     pencil.addEventListener("click", function () {
         if (eraser.classList.contains("lm-selected-border")) {
             eraser.classList.toggle("lm-selected-border");
@@ -121,7 +140,7 @@ function draw() {
             eraser.classList.toggle("dm-selected-border");
             this.classList.toggle("dm-selected-border");
         }
-        drawSquares(0);
+        drawSquares(0, customValue);
     });
 }
 
@@ -141,6 +160,7 @@ function erase() {
 function main() {
     makeGrid();
     updateGrid();
+    drawSquaresNewColor();
     darkMode();
     draw();
     erase();

@@ -28,7 +28,6 @@ h1 {
     font-size: 50px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 5vw;
     margin-top: 15px;
 }
 
@@ -82,58 +81,58 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Dark mode */
 .dm-body {
-    background-color: rgb(32, 32, 32);
+    background-color: #202020;
 }
 
 .dm-icon {
-    color: rgb(232, 232, 232);
+    color: #e8e8e8;
 }
 
 .dm-btn {
-    border: thin solid rgb(232, 232, 232);
-    background-color: rgb(32, 32, 32);
-    color: rgb(232, 232, 232);
+    border: thin solid #e8e8e8;
+    background-color: #202020;
+    color: #e8e8e8;
 }
 
 .dm-grid {
-    border: thin solid rgb(232, 232, 232);
+    border: thin solid #e8e8e8;
 }
 
 .dm-grid {
-    border: thin solid rgb(232, 232, 232);
+    border: thin solid #e8e8e8;
 }
 
 .dm-selected-border {
-    border-bottom: 2px solid rgb(232, 232, 232);
+    border-bottom: 2px solid #e8e8e8;
     padding-bottom: 32.5px;
 }
 
 /* Light mode */
 .lm-body {
-    background-color: rgb(232, 232, 232);
+    background-color: #e8e8e8;
 }
 
 .lm-icon {
-    color: rgb(32, 32, 32);
+    color: #202020;
 }
 
 .lm-btn {
-    border: thin solid rgb(32, 32, 32);
-    background-color: rgb(232, 232, 232);
-    color: rgb(32, 32, 32);
+    border: thin solid #202020;
+    background-color: #e8e8e8;
+    color: #202020;
 }
 
 .lm-grid {
-    border: thin solid rgb(32, 32, 32);
+    border: thin solid #202020;
 }
 
 .lm-selected-border {
-    border-bottom: 2px solid rgb(32, 32, 32);
+    border-bottom: 2px solid #202020;
     padding-bottom: 32.5px;
 }
 
 /* Landscape phone, small tablet */
-@media only screen and (min-width: 415px) and (max-width: 600px) {
+@media only screen and (min-width: 500px) and (max-width: 640px) {
     h1 {
         white-space: nowrap;
         font-size: 30px;
@@ -155,7 +154,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Phone */
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 500px) {
     h1 {
         white-space: nowrap;
         font-size: 30px;
