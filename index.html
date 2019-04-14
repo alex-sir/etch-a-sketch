@@ -9,7 +9,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./assets/spectrum/spectrum.css">
@@ -20,17 +19,21 @@
 <body class="lm-body">
   <header>
     <nav class="t-nav">
+      <!-- Left nav -->
       <i class="fas fa-eye lm-icon"></i>
       <i class="fas fa-pencil-alt lm-icon lm-selected-border"></i>
       <i class="fas fa-eraser lm-icon"></i>
-      <input type="text" id="custom">
+      <i class="fas fa-th-large lm-icon"></i>
+      <!-- Title -->
       <h1 class="lm-icon">Etch-a-Sketch</h1>
-      <!-- Add toggle grid and rainbow icons -->
+      <!-- Right nav -->
+      <input type="text" id="custom">
       <input class="lm-btn" type="number" name="squares" value="16" min="1" max="64">
       <button class="clear lm-btn" type="button">Clear</button>
     </nav>
   </header>
   <main>
+    <!-- Grid -->
     <div class="container"></div>
   </main>
   <!-- Scripts -->

@@ -131,6 +131,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-bottom: 32.5px;
 }
 
+/* Grid toggle */
+.grid-toggle {
+    opacity: 0.5;
+}
+
 /* Landscape phone, small tablet */
 @media only screen and (min-width: 500px) and (max-width: 640px) {
     h1 {
