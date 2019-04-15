@@ -7,7 +7,7 @@ Small sketch program using CSS grid.
 - Draw: Hover over or tap spots in the grid to fill them in with a specified color.
 - Erase: Same mechanic as draw, except it removes filled color.
 - Grid Toggle: Toggles the bordering on each of the individual cells in the grid.
-- Colorpicker: [Spectrum Colorpicker](https://github.com/bgrins/spectrum).
+- Colorpicker: [Spectrum](https://github.com/bgrins/spectrum).
 - Grid cells: Change the number of cells in the grid.
     - Min: 1
     - Max: 100 
