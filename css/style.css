@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI',
-        Tahoma,
-        Geneva,
-        Verdana,
+    font-family: 'Montserrat',
         sans-serif;
 }
 
@@ -103,6 +100,11 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 20px;
     opacity: 0.5;
     transition: opacity 0.1s ease-in-out;
+}
+
+.b-nav a {
+    width: 20px;
+    height: 20px;
 }
 
 .b-nav img:hover {
