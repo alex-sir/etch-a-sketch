@@ -1,9 +1,9 @@
-assets/spectrum/build/
-assets/spectrum/docs/
-assets/spectrum/example/
-assets/spectrum/i8n/
-assets/spectrum/test/
-assets/spectrum/themes/
+assets/spectrum/build
+assets/spectrum/docs
+assets/spectrum/example
+assets/spectrum/i8n
+assets/spectrum/test
+assets/spectrum/themes
 assets/spectrum/gitignore
 assets/spectrum/travis.yml
 assets/spectrum/bower.json
