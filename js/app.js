@@ -25,20 +25,17 @@ function makeGrid() {
     } else if (numOfSquares.value < +numOfSquares.getAttribute("min")) {
         numOfSquares.value = +numOfSquares.getAttribute("min");
     }
+    let totalSquares = numOfSquares.value * numOfSquares.value;
     container.setAttribute("style",
         `grid-template: repeat(${numOfSquares.value}, 1fr) / repeat(${numOfSquares.value}, 1fr)`);
-    for (let x = 1; x <= numOfSquares.value; x++) {
-        for (let y = 1; y <= numOfSquares.value; y++) {
-            container.appendChild(document.createElement("div"));
-            if (gridToggle.classList.contains("grid-toggle")) {
-                null;
-            } else if (h1.classList[0] === "lm-icon") {
-                container.lastChild.classList.add("lm-grid");
-            } else {
-                container.lastChild.classList.add("dm-grid");
-            }
-            container.lastChild.setAttribute("style",
-                `grid-area: ${x} / ${y} / span 1 / span 1`);
+    for (let i = 1; i <= totalSquares; i++) {
+        container.appendChild(document.createElement("div"));
+        if (gridToggle.classList.contains("grid-toggle")) {
+            null;
+        } else if (h1.classList[0] === "lm-icon") {
+            container.lastChild.classList.add("lm-grid");
+        } else {
+            container.lastChild.classList.add("dm-grid");
         }
     }
     if (gridCount === 0) {
