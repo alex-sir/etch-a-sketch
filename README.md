@@ -2,7 +2,7 @@
 Small sketch program using CSS grid.
 
 ### Features
-- Dark Mode: Toggle by clicking the **eye* icon.
+- Dark Mode: Toggle by clicking the *eye* icon.
 - Draw: Hover over or tap spots in the grid to fill them in with a specified color.
 - Erase: Same mechanic as draw, except it removes filled color.
 - Grid: Toggles the bordering on each of the individual cells in the grid.
