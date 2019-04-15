@@ -1,0 +1,14 @@
+assets/spectrum/build/
+assets/spectrum/docs/
+assets/spectrum/example/
+assets/spectrum/i8n/
+assets/spectrum/test/
+assets/spectrum/themes/
+assets/spectrum/gitignore
+assets/spectrum/travis.yml
+assets/spectrum/bower.json
+assets/spectrum/Gruntfile.js
+assets/spectrum/index.html
+assets/spectrum/LICENSE
+assets/spectrum/package.json
+assets/spectrum/README.md

@@ -7,7 +7,6 @@ const eraser = document.querySelector(".fa-eraser");
 const gridToggle = document.querySelector(".fa-th-large");
 const h1 = document.querySelector("h1");
 
-// Jquery for spectrum
 $("#custom").spectrum({
     color: "#b42020",
     showInput: true,
@@ -82,18 +81,18 @@ function gridToggleSwitch() {
     const divs = document.querySelectorAll(".container div");
     this.classList.toggle("grid-toggle");
     if (divs[0].classList.contains("lm-grid") ||
-        container.classList.contains("lm-grid")) {
+        container.classList.contains("lm-container")) {
         divs.forEach((div) => {
             div.classList.toggle("lm-grid");
         });
-        container.classList.toggle("lm-grid");
+        container.classList.toggle("lm-container");
     } else if (divs[0].classList.contains("dm-grid") ||
-        container.classList.contains("dm-grid")) {
+        container.classList.contains("dm-container")) {
         divs.forEach((div) => {
             div.classList.toggle("dm-grid");
         });
-        container.classList.toggle("dm-grid");
-        container.classList.remove("lm-grid");
+        container.classList.toggle("dm-container");
+        container.classList.remove("lm-container");
     }
 }
 
@@ -161,12 +160,12 @@ function darkMode() {
         clearButton.classList.toggle("dm-btn");
         numOfSquares.classList.toggle("lm-btn");
         numOfSquares.classList.toggle("dm-btn");
-        if (container.classList.contains("lm-grid")) {
-            container.classList.toggle("lm-grid");
-            container.classList.toggle("dm-grid");
-        } else if (container.classList.contains("dm-grid")) {
-            container.classList.toggle("dm-grid");
-            container.classList.toggle("lm-grid");
+        if (container.classList.contains("lm-container")) {
+            container.classList.toggle("lm-container");
+            container.classList.toggle("dm-container");
+        } else if (container.classList.contains("dm-container")) {
+            container.classList.toggle("dm-container");
+            container.classList.toggle("lm-container");
         } else {
             document.querySelectorAll(".container div").forEach(div => {
                 div.classList.toggle("lm-grid");
