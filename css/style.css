@@ -29,6 +29,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    white-space: nowrap;
 }
 
 .clear {
@@ -77,6 +78,29 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 80vw;
     height: 80vh;
     margin: 4vh auto;
+}
+
+/* Grid toggle */
+.grid-toggle {
+    opacity: 0.5;
+}
+
+/* Footer */
+.b-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-nav p {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.b-nav img {
+    width: 20px;
+    height: 20px;
 }
 
 /* Dark mode */
@@ -131,30 +155,47 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-bottom: 32.5px;
 }
 
-/* Grid toggle */
-.grid-toggle {
-    opacity: 0.5;
-}
-
 /* Landscape phone, small tablet */
-@media only screen and (min-width: 500px) and (max-width: 640px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     h1 {
         white-space: nowrap;
-        font-size: 30px;
-        margin-top: 25px;
+        font-size: 6vw;
+        margin-top: 20px;
     }
 
     .fas {
-        margin-left: 1vw;
+        margin-left: 1.5vw;
+        font-size: 4vw;
     }
 
     .clear {
         margin-right: 2vw;
         margin-left: 2vw;
+        font-size: 2vw;
     }
 
     input[name="squares"] {
-        margin-left: 3vw;
+        margin-left: 1vw;
+        font-size: 2vw;
+    }
+
+    .lm-selected-border {
+        padding-bottom: 0;
+    }
+
+    .dm-selected-border {
+        padding-bottom: 0;
+    }
+}
+
+/* Bottom border adjustment */
+@media only screen and (min-width: 640px) and (max-width: 800px) {
+    .lm-selected-border {
+        padding-bottom: 35px;
+    }
+
+    .dm-selected-border {
+        padding-bottom: 35px;
     }
 }
 
@@ -162,33 +203,33 @@ input[type="number"]::-webkit-outer-spin-button {
 @media only screen and (max-width: 500px) {
     h1 {
         white-space: nowrap;
-        font-size: 30px;
+        font-size: 6vw;
         margin-top: 25px;
     }
 
     .fas {
         margin-left: 1vw;
         margin-top: 30px;
-        font-size: 5vw;
-        height: 6vw;
+        font-size: 4vw;
+        height: 5vw;
     }
 
     .clear {
-        margin-right: 2vw;
-        margin-left: 2vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
         font-size: 2vw;
     }
 
     input[name="squares"] {
-        margin-left: 3vw;
+        margin-left: 1vw;
         font-size: 2vw;
     }
 
     .lm-selected-border {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 
     .dm-selected-border {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 }

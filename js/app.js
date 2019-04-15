@@ -17,25 +17,6 @@ $("#custom").spectrum({
 });
 let customValue = $("#custom").spectrum("get");
 
-function updateGrid() {
-    numOfSquares.addEventListener("keydown", event => {
-        if (event.key === "Enter") {
-            resetGrid();
-            makeGrid();
-            if (pencil.classList.contains("lm-selected-border") ||
-                pencil.classList.contains("dm-selected-border")) {
-                drawSquares(1, customValue);
-            } else {
-                eraseSquares();
-            }
-        }
-    });
-}
-
-function resetGrid() {
-    container.innerHTML = "";
-}
-
 // Updates grid toggle correctly
 let gridCount = 0;
 
@@ -70,6 +51,10 @@ function makeGrid() {
     }
 }
 
+function resetGrid() {
+    container.innerHTML = "";
+}
+
 function clear(divs) {
     clearButton.addEventListener("click", () => {
         divs.forEach((div) => {
@@ -78,8 +63,19 @@ function clear(divs) {
     });
 }
 
-function toggleGrid() {
-    gridToggle.addEventListener("click", gridToggleSwitch);
+function updateGrid() {
+    numOfSquares.addEventListener("keydown", event => {
+        if (event.key === "Enter") {
+            resetGrid();
+            makeGrid();
+            if (pencil.classList.contains("lm-selected-border") ||
+                pencil.classList.contains("dm-selected-border")) {
+                drawSquares(1, customValue);
+            } else {
+                eraseSquares();
+            }
+        }
+    });
 }
 
 function gridToggleSwitch() {
@@ -99,6 +95,10 @@ function gridToggleSwitch() {
         container.classList.toggle("dm-grid");
         container.classList.remove("lm-grid");
     }
+}
+
+function toggleGrid() {
+    gridToggle.addEventListener("click", gridToggleSwitch);
 }
 
 // autoClear: 1 = active
@@ -141,6 +141,8 @@ function eraseSquares() {
 }
 
 function darkMode() {
+    let githubImg = document.querySelector(".b-nav img");
+
     darkModeEye.addEventListener("click", () => {
         document.querySelectorAll(".fas").forEach(fas => {
             fas.classList.toggle("lm-icon");
@@ -170,6 +172,13 @@ function darkMode() {
                 div.classList.toggle("lm-grid");
                 div.classList.toggle("dm-grid");
             });
+        }
+        document.querySelector(".b-nav p").classList.toggle("lm-icon");
+        document.querySelector(".b-nav p").classList.toggle("dm-icon");
+        if (githubImg.getAttribute("src") === "./img/GitHub-Mark/PNG/GitHub-Mark-32px.png") {
+            githubImg.setAttribute("src", "./img/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png");
+        } else {
+            githubImg.setAttribute("src", "./img/GitHub-Mark/PNG/GitHub-Mark-32px.png");
         }
     });
 }
