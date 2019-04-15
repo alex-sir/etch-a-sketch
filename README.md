@@ -9,5 +9,6 @@ Small sketch program using CSS grid.
 - Colorpicker: [Spectrum Colorpicker](https://github.com/bgrins/spectrum).
 - Grid cells: Change the number of cells in the grid.
     - Min: 1
-    - Max: 100 **NOTE: GOING TO HIGH NUMBERS WILL RESULT IN A DELAY WHEN ACTIVATING DARK MODE OR GRID TOGGLE**
+    - Max: 100 
+    - **NOTE: GOING TO HIGH NUMBERS WILL RESULT IN A DELAY WHEN ACTIVATING DARK MODE OR GRID TOGGLE**
 - Clear: Clears every cell of color.
