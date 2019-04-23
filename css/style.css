@@ -83,32 +83,32 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Footer */
-.b-nav {
+footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.b-nav p {
+footer p {
     font-size: 14px;
     margin-right: 10px;
     font-style: italic;
 }
 
-.b-nav img {
+footer img {
     width: 20px;
     height: 20px;
     opacity: 0.5;
     transition: opacity 0.1s ease-in-out;
 }
 
-.b-nav a {
+footer a {
     width: 20px;
     height: 20px;
 }
 
-.b-nav img:hover {
+footer img:hover {
     opacity: 1;
 }
 

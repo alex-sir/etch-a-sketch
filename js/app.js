@@ -137,7 +137,7 @@ function eraseSquares() {
 }
 
 function darkMode() {
-    let githubImg = document.querySelector(".b-nav img");
+    let githubImg = document.querySelector("footer img");
 
     darkModeEye.addEventListener("click", () => {
         document.querySelectorAll(".fas").forEach(fas => {
@@ -169,8 +169,8 @@ function darkMode() {
                 div.classList.toggle("dm-grid");
             });
         }
-        document.querySelector(".b-nav p").classList.toggle("lm-icon");
-        document.querySelector(".b-nav p").classList.toggle("dm-icon");
+        document.querySelector("footer p").classList.toggle("lm-icon");
+        document.querySelector("footer p").classList.toggle("dm-icon");
         if (githubImg.getAttribute("src") === "./img/GitHub-Mark/PNG/GitHub-Mark-32px.png") {
             githubImg.setAttribute("src", "./img/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png");
         } else {
