@@ -1,5 +1,5 @@
 # etch-a-sketch
-Small sketch program using CSS grid.
+Sketch program using CSS grid.
 
 ### Features
 - Dark Mode: Toggle by clicking the **eye** icon.
